@@ -9,17 +9,22 @@ def get_big_mac_price_by_year(year,country_code):
     result = round(result_df, input,2)
 
 def get_big_mac_price_by_country(country_code):
-    pass querey= f"(iso_a3 == '{KOR}')
-    print(mean_df in {year} in ('dollar_price')
-    round(input,2)
+    query= f"(iso_a3 == '{KOR.upper()}')
+    result_df = df.query(query)
+    result=(round(krw_df ['dollar_price'].mean(),2))
+
 
 def get_the_cheapest_big_mac_price_by_year(year):
-    pass year=(2008)
-    "country_name(country_code): $dollar_price" ()
+    query = f"(date >= {2008}-01-01 and date <= {2008}-12-31)"
+    result_df = df.query(query)
+    result = round(result_df, input,2)
+    min_idx= (MYR_df ['dollar_price'].idxmin())
 
 def get_the_most_expensive_big_mac_price_by_year(year):
-    pass year=(2008)
-    "country_name(country_code): $dollar_price" ()
+    query = f"(date >= {2003}-01-01 and date <= {2003}-12-31)"
+    result_df = df.query(query)
+    result = round(result_df, input,2)
+    max_idx= (CHF_df ['dollar_price'].idxmax())
 
 if __name__ == "__main__":
     pass 
