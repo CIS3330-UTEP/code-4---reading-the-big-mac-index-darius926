@@ -1,65 +1,51 @@
-# import pandas as pd
+import pandas as pd
 
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
-# print(df['dollar_price'])
+print(df['dollar_price'])
 
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
-# import pandas as pd
+query=f"(iso_a3 == 'MEX')"
+mxn_df =df.query(query)
 
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
+print(mxn_df)
 
-# query=f"(iso_a3 == 'MEX')"
-# mxn_df =df.query(query)
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
-# print(mxn_df)
+query=f"(iso_a3 == 'MEX')"
+mxn_df =df.query(query)
 
+print(mxn_df.median())
 
-# import pandas as pd
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
+query=f"(iso_a3 == 'MEX')"
+mxn_df =df.query(query)
 
-# query=f"(iso_a3 == 'MEX')"
-# mxn_df =df.query(query)
+print(type(mxn_df['dollar_price'].median()))
 
-# print(mxn_df.median())
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
+query=f"(iso_a3 == 'MEX')"
+mxn_df =df.query(query)
 
-# import pandas as pd
+print(mxn_df['dollar_price'].min())
+print(mxn_df['dollar_price'].max())
+print(round(mxn_df['dollar_price'].mean(),2))
 
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
+filename= "./big-mac-full-index.csv"
+df= pd.read_csv(filename)
 
-# query=f"(iso_a3 == 'MEX')"
-# mxn_df =df.query(query)
+query=f"(iso_a3 == 'KOR')"
+kor_df =df.query(query)
+min_idx= kor_df ['dollar_price'].idxmin()
 
-# print(type(mxn_df['dollar_price'].median()))
-
-
-# import pandas as pd
-
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
-
-# query=f"(iso_a3 == 'MEX')"
-# mxn_df =df.query(query)
-
-# print(mxn_df['dollar_price'].min())
-# print(mxn_df['dollar_price'].max())
-# print(round(mxn_df['dollar_price'].mean(),2))
-
-# import pandas as pd
-
-# filename= "./big-mac-full-index.csv"
-# df= pd.read_csv(filename)
-
-# query=f"(iso_a3 == 'JPN')"
-# jpn_df =df.query(query)
-# min_idx= jpn_df ['dollar_price'].idxmin()
-
-# print(min_idx)
-# print(jpn_df.loc[min_idx])
-# print(jpn_df.loc[min_idx]['dollar_price'])
+print(min_idx)
+print(jpn_df.loc[min_idx])
+print(jpn_df.loc[min_idx]['dollar_price'])
