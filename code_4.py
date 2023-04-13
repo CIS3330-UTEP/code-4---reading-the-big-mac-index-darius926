@@ -51,3 +51,5 @@ if __name__ == "__main__":
       country_code='KOR'
       print(get_big_mac_price_by_country(year))
       print(get_big_mac_price_by_country(country_code))
+      get_the_cheapest_big_mac_price_by_year(year)
+      get_the_most_expensive_big_mac_price_by_year(year)
