@@ -1,31 +1,53 @@
 import csv
 import pandas as pd
-big_mac_file = './big-mac-full-index.csv'
-df= pd.read_csv(big_mac_file)
+
+filename = './big-mac-full-index.csv'
+file_object=open(filename)
+df= pd.read_csv(filename)
+print(df.columns)
+
+year=2003
+country_code='KOR'
 
 def get_big_mac_price_by_year(year,country_code):
-    query = f"(iso_a3 == '{country_code.upper()}' and date >= {year}-01-01 and date <= {year}-12-31)"
+    query = f"(iso_a3 == '{str(country_code).upper()}' and date >= {year}-01-01 and date <= {year}-12-31)"
     result_df = df.query(query)
-    result = round(result_df, input,2)
+    result = round(result_df['d']. mean(),2)
+    print(result)
+    return result
+    
+
 
 def get_big_mac_price_by_country(country_code):
-    query= f"(iso_a3 == '{KOR.upper()}')
+    query= f"(iso_a3 == '{str(country_code).upper()}')"
     result_df = df.query(query)
-    result=(round(krw_df ['dollar_price'].mean(),2))
+    result=(round(result_df ['dollar_price'].mean(),2))
+    print(result)
+    return result
 
 
 def get_the_cheapest_big_mac_price_by_year(year):
-    query = f"(date >= {2008}-01-01 and date <= {2008}-12-31)"
+    query = f"(iso_a3 == 'KOR' and date >= {year}-01-01 and date <= {year}-12-31)"
     result_df = df.query(query)
-    result = round(result_df, input,2)
-    min_idx= (MYR_df ['dollar_price'].idxmin())
+    result = round(result_df['dollar_price'], min(),2)
+    min_idx= (result_df ['dollar_price'].idxmin())
+    print(result)
+    return result, min_idx
+
 
 def get_the_most_expensive_big_mac_price_by_year(year):
-    query = f"(date >= {2003}-01-01 and date <= {2003}-12-31)"
+    query = f"(date >= {year}-01-01 and date <= {year}-12-31)"
     result_df = df.query(query)
-    result = round(result_df, input,2)
-    max_idx= (CHF_df ['dollar_price'].idxmax())
+    result = round(result_df['dollar_price'], max(),2)
+    max_idx= (result_df ['dollar_price'].idxmax())
+    print(result)
+    return result, max_idx
+
+
+
 
 if __name__ == "__main__":
-    pass 
-
+      year=2003
+      country_code='KOR'
+      print(get_big_mac_price_by_country(year))
+      print(get_big_mac_price_by_country(country_code))
